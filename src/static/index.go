@@ -27,6 +27,15 @@ func About(w http.ResponseWriter, req *http.Request) {
 	render(w, "about", context)
 }
 
+func Contact(w http.ResponseWriter, req *http.Request) {
+	context := Context{Title: "Contact"}
+	render(w, "contact", context)
+}
+func Post(w http.ResponseWriter, req *http.Request) {
+	context := Context{Title: "Post"}
+	render(w, "post", context)
+}
+
 func render(w http.ResponseWriter, tmpl string, context Context) {
 	context.Static = STATIC_URL
 	tmpl_list := []string{"views/base.html",
